@@ -1,0 +1,50 @@
+{
+  "name": "vite-plugin-twig-loader",
+  "version": "1.0.0",
+  "description": "A Vite plugin to load Twig templates in JavaScript.",
+  "keywords": [
+    "loader",
+    "plugin",
+    "twig",
+    "vite"
+  ],
+  "homepage": "https://github.com/jramard-addviso/vite-plugin-twig-loader#readme",
+  "bugs": {
+    "url": "https://github.com/jramard-addviso/vite-plugin-twig-loader/issues"
+  },
+  "author": "Julien Ramard <jramard@addviso.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jramard-addviso/vite-plugin-twig-loader.git"
+  },
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.5",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  },
+  "scripts": {
+    "build": "tsup",
+    "ci": "npm run build && npm run check-format && npm run test",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci",
+    "test": "vitest run",
+    "format": "prettier --write .",
+    "check-format": "prettier --check ."
+  }
+}
